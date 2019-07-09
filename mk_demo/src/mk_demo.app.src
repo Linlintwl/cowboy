@@ -1,0 +1,9 @@
+{application, 'mk_demo', [
+	{description, "New project"},
+	{vsn, "0.1.0"},
+	{modules, []},
+	{registered, []},
+	{mod, {mk_demo_app, []}},
+	{applications, [kernel,stdlib]},
+	{env,[{http_port, 8080}]}
+]}.

@@ -1,0 +1,2 @@
+make -f erlang.mk bootstrap bootstrap-rel
+make

@@ -1,0 +1,27 @@
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<h1>Test2</h1>
+<button id="button1">click</button>
+<div id="result"></div>
+<script>
+$(document).ready(go);
+var data = {int:1234,
+            string:"abcd",
+            array:[1,2,3,'abc'],
+            map:{one:'abc', two:1, three:"abc"}};
+
+function go(){
+        $("#button1").click(test);
+}
+
+function test(){
+        $.ajax({url:"test?mod=test&func=echo",
+                type:'POST',
+                data:JSON.stringify(data),
+                success:function(str){
+                        var ret = JSON.parse(str);
+                        $("#result").html("<pre>"+
+                                          JSON.stringify(ret, undefined, 4) +
+                                          "</pre>");
+                }});
+}
+</script>
